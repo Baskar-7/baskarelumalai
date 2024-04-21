@@ -1,0 +1,60 @@
+{{page-title "ProjectScreenshots"}}
+
+<div class="screen_shots">
+
+    <div class="Home_page_container" style="margin-bottom: 80px;">
+        <h1>Home Page ScreenShots</h1>
+        <div class="slideshow-container">
+            
+            {{#each this.model.home as |image index|}}
+                <div class="mySlides home_page_slides fade">
+                    <img src={{image.url}} style="width:100%">
+                    {{#if image.description}}
+                        <div style="display: flex;justify-content:center;">
+                            <div class="caption">{{image.description}}</div>
+                        </div>
+                    {{/if}}
+                </div>
+            {{/each}}
+
+            <div class="prev" {{on "click" (fn this.plusDivs -1 "home_page")}}>❮</div>
+            <div class="next" {{on "click" (fn this.plusDivs 1 "home_page")}}>❯</div>
+        </div>
+
+        <div style="text-align:center;margin-top:10px;">
+            {{#each this.model.home as |image index|}}
+                <span class="dot home_page_dots" {{on "click" (fn this.currentDiv index "home_page")}}></span> 
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="profile_page_container">
+        <h1>Profile Page ScreenShots</h1>
+        <div class="slideshow-container">
+            {{#each this.model.profile as |image index|}}
+                <div class="mySlides profile_page_slides fade">
+                    <img src={{image.url}} style="width:100%">
+                    {{#if image.description}}
+                        <div style="display: flex;justify-content:center;">
+                            <div class="caption">{{image.description}}</div>
+                        </div>
+                    {{/if}}
+                </div>
+            {{/each}}
+
+            <div class="prev" {{on "click" (fn this.plusDivs -1 "profile_page")}}>❮</div>
+            <div class="next" {{on "click" (fn this.plusDivs 1 "profile_page")}}>❯</div>
+        </div>
+
+        <div style="text-align:center;margin-top:10px;">
+            {{#each this.model.profile as |image index|}}
+                <span class="dot profile_page_dots" {{on "click" (fn this.currentDiv index "profile_page")}}></span> 
+            {{/each}}
+        </div>
+    </div>
+
+</div>
+{{this.showDivs 1 "home_page"}}
+{{this.showDivs 1 "profile_page"}}
+
+{{outlet}}
