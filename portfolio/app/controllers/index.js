@@ -64,7 +64,7 @@ export default class IndexController extends Controller {
         url: 'https://api.twilio.com/2010-04-01/Accounts/AC8ab9831670563a6442d298896a7ac848/Messages.json',
         data: {
             "To": '+919080740652',
-            "From": "12176154006",
+            "From": "+12176154006",
             "Body":  values
         },
         headers: {
@@ -104,4 +104,13 @@ export default class IndexController extends Controller {
     );
   }
 
+  @action
+  checkMaxLength(maxlength, event) {
+    var value = event.target.value;
+    if (value.length > maxlength) {
+      value = value.slice(0, maxlength);
+      event.target.value = value;
+    }
+  }
+}
 }

@@ -267,7 +267,7 @@
                             </div>
 
                             <div class="input-box">
-                                <input type="tel" id="phone" name="mobile" pattern="[0-9]{10}" required="true" autocomplete="off"/>
+                                <input type="tel" id="phone" name="mobile" pattern="[0-9]{10}" required="true" {{on "keyup" (fn this.checkMaxLength 10)}} autocomplete="off"/>
                                 <span>Mobile</span>
                             </div>
                             
