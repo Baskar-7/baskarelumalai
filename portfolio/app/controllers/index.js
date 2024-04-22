@@ -77,7 +77,7 @@ export default class IndexController extends Controller {
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             console.error('Message could not be sent:', errorThrown);
             var data={
-                status: "success",
+                status: "error",
                 message: "Error occurred!!.. Pls try again after sometime",
             }
             self.updateStatusMessage(data)
