@@ -100,7 +100,7 @@ body{
         font-family: Georgia, 'Times New Roman', Times, serif;
         padding: 5px;
         display: flex;
-        font-size: 15px;
+        font-size: 18px;
         letter-spacing: 1.5px;
         background-color: transparent; 
         transition: all 0.3s ease-in-out;
@@ -287,6 +287,11 @@ body{
 
             li{
                 padding: 6px;
+            }
+
+            #project-keyfeatures
+            {
+              font-size: 14px;
             }
         }
     }
@@ -570,6 +575,8 @@ body{
     to {opacity: 1}
 }
 
+
+
 // Message-box
 .success{
     background-color: #9fea9e;
@@ -606,3 +613,51 @@ body{
   100% {top:10px;opacity: 0;}
 }
 
+
+//circle loader
+.loading
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.658);
+  z-index: 998;
+
+  .spinner-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: transparent;
+
+    .circle-border {
+      width: 80px;
+      height: 80px;
+      padding: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      animation: spin .8s linear 0s infinite;
+
+      .circle-core {
+        width: 100%;
+        height: 100%;
+        background-color: #fff0;
+        border-radius: 50%;
+        border-right: 2px dotted rgb(124, 236, 245);
+      }
+    }
+
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(359deg);
+  }
+}

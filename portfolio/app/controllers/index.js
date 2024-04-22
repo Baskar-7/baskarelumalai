@@ -2,8 +2,11 @@ import Controller from '@ember/controller';
 import {action} from '@ember/object';
 import $ from 'jquery';
 import { set } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class IndexController extends Controller {
+	
+	 @tracked isloading;
 
   init() {
     super.init(...arguments);
@@ -38,6 +41,7 @@ export default class IndexController extends Controller {
 
   @action
   sendSMS(event) {
+	
     event.preventDefault();
     const form = event.target;
 
@@ -54,7 +58,7 @@ export default class IndexController extends Controller {
 
       var self=this;
          
-    
+     this.isloading = 'true';
     $.ajax({
         type: 'POST',
         url: 'https://api.twilio.com/2010-04-01/Accounts/AC8ab9831670563a6442d298896a7ac848/Messages.json',
@@ -73,6 +77,7 @@ export default class IndexController extends Controller {
             }
             self.updateStatusMessage(data);
             $('#contact-form')[0].reset();
+			this.isloading = 'false';
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             console.error('Message could not be sent:', errorThrown);
@@ -81,13 +86,15 @@ export default class IndexController extends Controller {
                 message: "Error occurred!!.. Pls try again after sometime",
             }
             self.updateStatusMessage(data)
+			this.isloading = 'false';
         }
     });
+	
   }
 
   @action
   viewScreenShots() {
-    const url = 'http://localhost:4200/project-screenshots/';
+    const url = 'https://baskarelumalai.vercel.app/project-screenshots';
     window.open(
       url,
       '_blank',
