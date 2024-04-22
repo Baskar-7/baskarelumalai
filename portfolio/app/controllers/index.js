@@ -77,7 +77,7 @@ export default class IndexController extends Controller {
             }
             self.updateStatusMessage(data);
             $('#contact-form')[0].reset();
-			this.isloading = 'false';
+			self.isloading = 'false';
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             console.error('Message could not be sent:', errorThrown);
@@ -86,7 +86,7 @@ export default class IndexController extends Controller {
                 message: "Error occurred!!.. Pls try again after sometime",
             }
             self.updateStatusMessage(data)
-			this.isloading = 'false';
+			self.isloading = 'false';
         }
     });
 	
