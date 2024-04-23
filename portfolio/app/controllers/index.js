@@ -45,7 +45,7 @@ export default class IndexController extends Controller {
     event.preventDefault();
     const form = event.target;
 
-    var values = "";
+    var values = "\n";
 
     form.querySelectorAll('input').forEach((input) => {
       if (input.type !== 'submit') {
