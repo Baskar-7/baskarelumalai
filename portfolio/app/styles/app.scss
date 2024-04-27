@@ -145,13 +145,14 @@ body{
             background-position-y: bottom;
             padding: 20px;
             padding-bottom: 0px;
-            // h3{
+            h3{
             //     // margin-top: 90px;
             //     // margin-bottom: 70px;
-            // }
+                  margin: 50px;
+            }
             .about-content{
               display: flex;
-                text-indent: 50px;
+
                 img{
                   background-repeat: no-repeat;
                   background-repeat: no-repeat;
@@ -162,10 +163,12 @@ body{
                 flex-direction: row;
                 justify-content: space-evenly;
                 height: 100%;
-                align-items: center;
+                // align-items: center;
 
                 .about-text{
                    line-height: 35px;
+                   text-indent: 50px;
+                   padding-left: 30px;
                 }
             }
         }
