@@ -140,20 +140,29 @@ body{
         .content{
             height: 70vh;
             background-repeat: no-repeat;
-            background-image: url(/Baskar1.png);
+            // background-image: url(/Baskar1.png);
             background-position-x: right;
             background-position-y: bottom;
             padding: 50px;
-
-            h3{
-                margin-top: 90px;
-                margin-bottom: 70px;
-            }
+            padding-bottom: 0px;
+            // h3{
+            //     // margin-top: 90px;
+            //     // margin-bottom: 70px;
+            // }
             .about-content{
+              display: flex;
                 text-indent: 50px;
-                width: 60%;
+                img{
+                  background-repeat: no-repeat;
+                  background-repeat: no-repeat;
+                }
+                // width: 60%;
                 letter-spacing: 1px;
                 word-spacing: 5px;
+                flex-direction: row;
+                justify-content: space-evenly;
+                height: 100%;
+                align-items: center;
             }
         }
     }
