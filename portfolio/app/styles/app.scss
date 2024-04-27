@@ -157,6 +157,20 @@ body{
                   background-repeat: no-repeat;
                   background-repeat: no-repeat;
                 }
+
+                .about-img
+                {
+                  img{
+                      width: 350px;
+                  }
+
+                  @media only screen and (max-width: 600px){
+                      img{
+                        width: 250px;
+                      }
+                  }
+                }
+
                 // width: 60%;
                 letter-spacing: 1px;
                 word-spacing: 5px;
