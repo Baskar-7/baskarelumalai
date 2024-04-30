@@ -68,7 +68,7 @@ export default class IndexController extends Controller {
             "Body":  values
         },
         headers: {
-            'Authorization': 'Basic ' + btoa('AC8ab9831670563a6442d298896a7ac848:48e5a5c7ec027c4646ca39524d0e2f9b)
+            'Authorization': 'Basic ' + btoa('AC8ab9831670563a6442d298896a7ac848:48e5a5c7ec027c4646ca39524d0e2f9b')
         },
         success: function(data) {
             var data={
